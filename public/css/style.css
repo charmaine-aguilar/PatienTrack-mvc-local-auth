@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
+
+* {
+    font-family: 'Source Sans Pro';
+}
+
+body, html {
+    height: 100%;
+    overflow: hidden;
+}
+
+a {
+    cursor: pointer;
+}
+
+p {
+    margin: 0;
+}
+
+.navbar {
+    background-color: #192b5a;
+}
+
+.navbar-brand, .dropdown-toggle {
+    color: white;
+}
+
+.navbar-brand:hover {
+    color: white;
+}
+
+.company-logo {
+    height: 36px;
+    cursor: pointer;
+}
+
+.form-container {
+    max-width: 1024px;
+}
+
+.dropdown-toggle, .dropdown-toggle:hover, .dropdown-toggle:active, .dropdown-toggle:focus {
+    color: white;
+    border: none;
+    transition: none;
+}
+
+.dashboard-container {
+    background-color: #f1f0f7;
+}
+
+.form-container {
+    background-color: white;
+}
+
+.office-stats, .patient-action {
+    background-color: white;
+    cursor: pointer;
+}
+
+.office-stats i {
+    font-size: 36px;
+}
+
+.stat-count {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+span {
+    font-size: 20px;
+    color: red;
+}
+
+.patientInfo {
+    cursor: pointer;
+}
+
+.infoHeader {
+    color: gray;
+}
+
+/* Edit patient info page */
+.patient-profile {
+    display: flex;
+    flex-direction: column;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
+
+.more-option-btn {
+    background-color: transparent;
+}
+
+.more-option-btn::after {
+    display: none;
+}
+
+.btn.active,
+.btn:active {
+    background-color: transparent;
+}
+
+button {
+    width: 150px;
+}

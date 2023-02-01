@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PatienTrack</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <nav class="navbar p-3">
+        <section class="containerBox mr-auto d-flex align-items-center">
+            <img src="/css/images/PatienTrack-logo-transparent.png" alt="PatienTrack logo" class="company-logo">
+        </section>
+
+        <!-- Dropdown for profile -->
+        <section class="ml-auto">
+            <section class="dropdown d-flex">
+                <button class="btn dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Welcome, User!
+                </button>
+                
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">My Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Settings</a></li>
+                </ul>
+            </section>
+        </section>
+    </nav>
+
+
+    <section class="dashboard-container container-fluid h-100 p-5">
+
+        <section class="form-container container-fluid d-flex flex-column p-5 w-50 align-items-center border rounded">
+
+            <!-- Page navigation -->
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                    <li class="breadcrumb-item"><a href="#">Patients</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Patient</li>
+                </ol>
+            </nav>
+
+            <section class="add-patient-form-group container-fluid d-flex flex-column">
+
+            <section class="d-flex justify-content-between align-items-center">
+                <h2>Patient Profile</h2>
+            
+                <div class="dropdown">
+                    <button class="more-option-btn btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      <img src="/css/icons/more-vertical.svg" alt="">
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-dark">
+                      <li><a class="dropdown-item active" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                      <li><hr class="dropdown-divider"></li>
+                      <li><a class="dropdown-item" href="#">Separated link</a></li>
+                    </ul>
+                  </div>
+            </section>
+
+                <section class="patient-profile gap-3 py-4">
+                    <section class="d-flex flex-column gap-1">
+
+                        <section class="d-flex flex-column gap-1">
+                            <p class="infoHeader">Patient ID</p>
+                            <h4 id="patientID"><%= patient.patientID %></h4>
+                        </section>
+
+                        <p class="infoHeader">Name</p>
+                        <h4><%= patient.firstName %> <%= patient.lastName %></h4>
+                    </section>
+
+                    <section class="d-flex flex-column gap-1">
+                        <p class="infoHeader">DOB</p>
+                        <h4><%= patient.dateOfbirth %></h4>
+                    </section>
+
+                    <!-- Submit button -->
+                    <section class="d-flex justify-content-end gap-3 align-items-center">
+                        <button type="button" class="btn btn-primary" id="editPatientInfo">Edit patient</button>
+                        <button type="button" class="btn btn-danger" id="deletePatient">Delete patient</button>
+                        <button type="button" class="btn btn-link toBrowsePatientPage">Go to patient list</button>
+                    </section>
+                </section>
+
+                <section class="edit-form hide gap-5 py-4">
+                    <!-- First Name & Last Name -->
+                    <section class="d-flex gap-4">
+                        <section>
+                            <label for="firstName" class="form-label">First Name<span> *</span></label>
+                            <input required type="text" class="form-control shadow-sm" name="firstName" id="firstName" placeholder="<%= patient.firstName %>" value="<%= patient.firstName %>">
+                        </section>
+                        <section>
+                            <label for="lastName" class="form-label">Last Name<span> *</span></label>
+                            <input type="text" class="form-control shadow-sm" id="lastName" placeholder="<%= patient.lastName %>" value="<%= patient.lastName %>">
+                        </section>
+                    </section>
+        
+                    <!-- DOB -->
+                    <section class="d-flex gap-4">
+                        <section>
+                            <label for="dateOfbirth" class="form-label">Date of Birth<span> *</span> </label>
+                            <input type="date" class="form-control shadow-sm" id="dateOfbirth" placeholder="<%= patient.dateOfbirth %>" value="<%= patient.dateOfbirth %>">
+                        </section>
+                    </section>
+
+                    
+                </section>
+    
+                
+            </section>
+        </section>
+    </section>
+
+<!-- Main.js -->
+<script src="/js/main.js"></script>
+
+<!-- Bootstrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+
+<!-- Font Awesome -->
+<script src="https://kit.fontawesome.com/9f6d244e8f.js" crossorigin="anonymous"></script>
+</body>
+</html>
