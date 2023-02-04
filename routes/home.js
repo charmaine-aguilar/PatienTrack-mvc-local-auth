@@ -4,7 +4,7 @@ const router = express.Router()
 const authController = require('../controllers/auth')
 const homeController = require('../controllers/home')
 
-const { ensureAuth } = require('../middleware/auth')
+const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 router.get('/', ensureAuth, homeController.getHomePage)
 

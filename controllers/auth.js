@@ -12,6 +12,7 @@ exports.getLogin = (req, res) => {
 }
 
 exports.postLogin = (req, res, next) => {
+  console.log(req.body);
   const validationErrors = []
   if (!validator.isEmail(req.body.userEmail)) {
     console.log(`${req.body.userEmail} is invalid`);
@@ -23,6 +24,7 @@ exports.postLogin = (req, res, next) => {
     console.log(`${req.body.userPassword} is blank`);
     validationErrors.push({ msg: 'Password cannot be blank.' })
   }
+  console.log(`${req.body.userPassword} oops password!`);
 
 
   // if (validator.isEmpty(req.body.userPassword)) validationErrors.push({ msg: 'Password cannot be blank.' })

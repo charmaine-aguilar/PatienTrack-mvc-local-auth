@@ -3,7 +3,7 @@ const mongoose = require('mongoose')
 const User = require('../models/User')
 
 module.exports = function (passport) {
-  passport.use(new LocalStrategy({ usernameField: 'userEmail' }, (userEmail, userPassword, done) => {
+  passport.use(new LocalStrategy({ usernameField: 'userEmail', passwordField: 'userPassword'}, (userEmail, userPassword, done) => {
     User.findOne({ userEmail: userEmail.toLowerCase() }, (err, user) => {
       console.log(`Email ${userEmail} not found here inside passport.js.`);
       if (err) { return done(err) }
@@ -23,7 +23,6 @@ module.exports = function (passport) {
     })
   }))
   
-
   passport.serializeUser((user, done) => {
     done(null, user.id)
   })
